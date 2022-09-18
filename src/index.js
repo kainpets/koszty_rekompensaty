@@ -1,6 +1,4 @@
 import "./style.css";
-import "./components/helloComponent";
+import "./components/header";
 import "./components/getData";
-
-
-
+import "./components/mainComponent";

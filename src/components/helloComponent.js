@@ -1,7 +1,7 @@
-export default function Hello() {
-  const hello = document.createElement("h1");
-  hello.textContent = "Hello";
-  return hello;
+export default function hello() {
+  const welcome = document.createElement("h1");
+  welcome.textContent = "Hello";
+  return welcome;
 }
 
-document.body.appendChild(Hello());
+document.body.appendChild(hello());

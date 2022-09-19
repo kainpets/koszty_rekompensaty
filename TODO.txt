@@ -1,1 +1,4 @@
-change the links in the footer to correctly display socials icons
+1. change the links in the footer to correctly display socials icons
+2. create a form
+3. get date from a user
+4. 

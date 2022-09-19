@@ -1,5 +1,5 @@
 import "./style.css";
-import "./components/header";
+import "./components/headerComponenet";
 import "./components/getData";
-import "./components/mainComponent";
-import "./components/footer";
+import "./components/formComponent";
+import "./components/footerComponent";

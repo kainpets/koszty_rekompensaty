@@ -1,0 +1,1 @@
+change the links in the footer to correctly display socials icons

@@ -35,6 +35,19 @@ export default function footer() {
   socialListGithub.classList.add("social-list__item");
   unorderdList.appendChild(socialListGithub);
 
+  socialListGithub.appendChild(
+    createLink(
+      "https://github.com/kainpets",
+      "placeholder",
+      "social-list__link"
+    )
+  );
+
+  const gitHubIcon = document.createElement("i");
+  gitHubIcon.classList.add("fab");
+  gitHubIcon.classList.add("fa-github");
+  socialListGithub.appendChild(gitHubIcon);
+
   return footer;
 }
 

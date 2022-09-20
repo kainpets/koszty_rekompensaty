@@ -1,10 +1,13 @@
-1. change the links in the footer to correctly display socials icons
-2. create a form //
-3. get date from a user //
-4. create section "jak to działa" i "kiedy mogę tego użyć"
-5. extract month and year from the user's input //
-6. send the month to NBP API and return last month's euro exchange rate
-7. solve CORS issue - involve fetching data in button press //
-8. style the date picker
-9. create radio button to select the amount of the obligation //
-10. 
+/* DONE */
+create a form //
+create radio button to select the amount of the obligation //
+get date from a user //
+solve CORS issue - involve fetching data in button press //
+extract month and year from the user's input //
+
+/* TODO */
+send the month to NBP API and return last month's euro exchange rate
+style the date picker
+create section "jak to działa" i "kiedy mogę tego użyć"
+change the links in the footer to correctly display socials icons
+get input from radio buttons

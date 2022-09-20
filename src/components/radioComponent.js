@@ -1,5 +1,12 @@
 export default function radio() {
+  const form = document.createElement('form');
+  form.id = "radio-form";
+
+
   const fieldset = document.createElement("fieldset");
+  form.appendChild(fieldset);
+
+
   const legend = document.createElement("legend");
   legend.textContent = "Wybierz wysokość zaległego zobowiązania:";
   fieldset.appendChild(legend);
@@ -8,6 +15,7 @@ export default function radio() {
   inputUnder5000.setAttribute("type", "radio");
   inputUnder5000.setAttribute("name", "debt");
   inputUnder5000.setAttribute("checked", "");
+  inputUnder5000.setAttribute("value", ">5k");
   inputUnder5000.id = "under-5000";
   fieldset.appendChild(inputUnder5000);
 
@@ -19,6 +27,7 @@ export default function radio() {
   const inputOver5000 = document.createElement("input");
   inputOver5000.setAttribute("type", "radio");
   inputOver5000.setAttribute("name", "debt");
+  inputOver5000.setAttribute("value", ">50k");
   inputOver5000.id = "under-50000";
   fieldset.appendChild(inputOver5000);
 
@@ -30,6 +39,7 @@ export default function radio() {
   const inputOver50000 = document.createElement("input");
   inputOver50000.setAttribute("type", "radio");
   inputOver50000.setAttribute("name", "debt");
+  inputOver50000.setAttribute("value", "<50k>");
   inputOver50000.id = "over-50000";
   fieldset.appendChild(inputOver50000);
 
@@ -41,10 +51,10 @@ export default function radio() {
   const submitBtn = document.createElement("button");
   submitBtn.setAttribute("type", "submit");
   submitBtn.textContent = "Submit";
-  submitBtn.id = "submit-debt-btn"
+  submitBtn.id = "submit-debt-btn";
   fieldset.appendChild(submitBtn);
 
-  return fieldset;
+  return form;
 }
 
 document.body.appendChild(radio());

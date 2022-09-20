@@ -9,9 +9,9 @@ import "./components/footerComponent";
 // of the previous month.
 
 function getUserDate() {
-  const submitBtn = document.getElementById("submit-btn");
+  const form = document.getElementById("form");
 
-  submitBtn.addEventListener("change", (event) => {
+  form.addEventListener("change", (event) => {
     event.preventDefault();
     const date = new Date(document.getElementById("year").value);
     const month = date.toString().slice(4, 7);
@@ -25,8 +25,24 @@ function getUserDate() {
 }
 
 function getRadioInput() {
+  const form = document.getElementById("radio-form");
+  const log = document.createElement("p");
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const data = new FormData(form);
+    console.log(data);
+    let output = "";
+    for (const entry of data) {
+      console.log(entry);
+      output = `${entry}`;
+    }
+    log.innerText = output;
+  });
   
+  document.body.appendChild(log);
 }
+
+getRadioInput();
 
 async function getData(userDate) {
   const response = await fetch(

@@ -13,12 +13,6 @@ export default function form() {
   userDateInput.setAttribute("required", "");
   form.appendChild(userDateInput);
 
-  const submitButton = document.createElement("input");
-  submitButton.id = "submit-btn";
-  submitButton.setAttribute("type", "submit");
-
-  form.appendChild(submitButton);
-
   return form;
 }
 

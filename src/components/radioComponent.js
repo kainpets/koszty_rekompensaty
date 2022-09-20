@@ -2,10 +2,12 @@ export default function radio() {
   const fieldset = document.createElement("fieldset");
   const legend = document.createElement("legend");
   legend.textContent = "Wybierz wysokość zaległego zobowiązania:";
+  fieldset.appendChild(legend);
 
   const inputUnder5000 = document.createElement("input");
   inputUnder5000.setAttribute("type", "radio");
   inputUnder5000.setAttribute("name", "debt");
+  inputUnder5000.setAttribute("checked", "");
   inputUnder5000.id = "under-5000";
   fieldset.appendChild(inputUnder5000);
 
@@ -21,7 +23,7 @@ export default function radio() {
   fieldset.appendChild(inputOver5000);
 
   const labelOver5000 = document.createElement("label");
-  labelOver5000.setAttribute("for", "under-5000");
+  labelOver5000.setAttribute("for", "under-50000");
   labelOver5000.textContent = "mniej niż 50.000 zł";
   fieldset.appendChild(labelOver5000);
 
@@ -32,11 +34,15 @@ export default function radio() {
   fieldset.appendChild(inputOver50000);
 
   const labelOver50000 = document.createElement("label");
-  labelOver50000.setAttribute("for", "under-5000");
+  labelOver50000.setAttribute("for", "over-50000");
   labelOver50000.textContent = "równa lub większa niż 50.000 zł";
   fieldset.appendChild(labelOver50000);
 
-  fieldset.appendChild(legend);
+  const submitBtn = document.createElement("button");
+  submitBtn.setAttribute("type", "submit");
+  submitBtn.textContent = "Submit";
+  submitBtn.id = "submit-debt-btn"
+  fieldset.appendChild(submitBtn);
 
   return fieldset;
 }

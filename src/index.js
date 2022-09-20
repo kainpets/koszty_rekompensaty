@@ -24,6 +24,10 @@ function getUserDate() {
   });
 }
 
+function getRadioInput() {
+  
+}
+
 async function getData(userDate) {
   const response = await fetch(
     `http://api.nbp.pl/api/exchangerates/rates/a/eur/${userDate}-04/?format=json`

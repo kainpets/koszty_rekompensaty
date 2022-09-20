@@ -4,4 +4,7 @@
 4. create other tab that explains how and why to use this app
 5. extract month and year from the user's input //
 6. send the month to NBP API and return last month's euro exchange rate
-7. solve CORS issue - involve fetching data in button press
+7. solve CORS issue - involve fetching data in button press //
+8. style the date picker
+9. create radio button to select the amount of the obligation //
+10. 

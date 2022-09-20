@@ -1,4 +1,8 @@
 export default function form() {
+  const sectionTitle = document.createElement("h2");
+  sectionTitle.textContent = "Termin wymagalności zobowiązania: ";
+  document.body.appendChild(sectionTitle);
+
   const form = document.createElement("form");
   form.id = "form";
 

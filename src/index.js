@@ -11,7 +11,7 @@ import "./components/footerComponent";
 function getUserDate() {
   const submitBtn = document.getElementById("submit-btn");
 
-  submitBtn.addEventListener("click", (event) => {
+  submitBtn.addEventListener("change", (event) => {
     event.preventDefault();
     const date = new Date(document.getElementById("year").value);
     const month = date.toString().slice(4, 7);

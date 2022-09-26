@@ -2,6 +2,7 @@ import "./style.css";
 import "./components/headerComponent";
 import "./components/radioComponent";
 import "./components/formComponent";
+import "./components/tableComponent";
 import "./components/footerComponent";
 
 // The date input from the user is sent to the NBP API that
@@ -19,9 +20,19 @@ function getUserDate() {
     const finalDate = `${year}-${convertMonth(month)}`;
     getData(finalDate).then((data) => console.log("resolved:", data));
 
-    console.log(finalDate);
     return finalDate;
   });
+}
+
+function displayResults() {
+  const resultList = document.getElementById("result-list");
+  const row = document.createElement("tr");
+
+  row.innerHTML = `
+  <td>${getData()}</td>
+  <td></td>
+  <td></td>
+  `
 }
 
 function getRadioInput() {
@@ -38,7 +49,7 @@ function getRadioInput() {
     }
     log.innerText = output;
   });
-  
+
   document.body.appendChild(log);
 }
 

@@ -1,6 +1,5 @@
 import "./style.css";
 import "./components/headerComponent";
-import "./components/radioComponent";
 import "./components/formComponent";
 import "./components/tableComponent";
 import "./components/footerComponent";
@@ -19,6 +18,7 @@ function getUserDate() {
     const year = date.toString().slice(11, 15);
     const finalDate = `${year}-${convertMonth(month)}`;
     getData(finalDate).then((data) => console.log("resolved:", data));
+    displayResults();
 
     return finalDate;
   });
@@ -29,35 +29,18 @@ function displayResults() {
   const row = document.createElement("tr");
 
   row.innerHTML = `
-  <td>${getData()}</td>
-  <td></td>
-  <td></td>
-  `
+  <td>hi</td>
+  <td>wtf</td>
+  <td>ffs</td>
+  `;
+
+  resultList.appendChild(row);
 }
-
-function getRadioInput() {
-  const form = document.getElementById("radio-form");
-  const log = document.createElement("p");
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const data = new FormData(form);
-    console.log(data);
-    let output = "";
-    for (const entry of data) {
-      console.log(entry);
-      output = `${entry}`;
-    }
-    log.innerText = output;
-  });
-
-  document.body.appendChild(log);
-}
-
-getRadioInput();
 
 async function getData(userDate) {
   const response = await fetch(
-    `http://api.nbp.pl/api/exchangerates/rates/a/eur/${userDate}-04/?format=json`
+    `http://api.nbp.pl/api/exchangerates/rates/c/usd/2016-04-04/?format=json
+    `
   );
   const data = await response.json();
 

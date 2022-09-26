@@ -10,7 +10,6 @@
 :root {
   --background-dark: rgba(0, 0, 0, 0.9);
   --light-color: hsla(82, 46%, 94%, 1);
-  
 }
 
 /* Reset margins */
@@ -45,4 +44,27 @@ footer {
 
 ul {
   list-style: none;
+}
+
+table {
+  width: 60%;
+  border: 1px solid;
+  border-collapse: collapse;
+  font-size: 2rem;
+}
+
+table tr td:hover {background-color: #ddd;}
+
+th, td {
+  border: 1px solid;
+  height: 50px;
+}
+
+td {
+  text-align: center;
+}
+
+a {
+  color:var(--light-color);
+  text-decoration: none;
 }

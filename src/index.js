@@ -9,7 +9,7 @@ import moment from "moment/moment";
 // checks what was the exchange rate of euro for the last day
 // of the previous month.
 
-function getLastDayOfPreviousMonth() {
+function main() {
   const form = document.getElementById("form");
 
   form.addEventListener("change", (event) => {
@@ -22,19 +22,20 @@ function getLastDayOfPreviousMonth() {
     getData(lastDayOfPreviousMonth).then((data) => {
       const euroExchangeRate = decimalAdjust("floor", data.rates[0].mid, -2);
       console.log(euroExchangeRate);
-      displayResults(euroExchangeRate);
+      displayResults(lastDayOfPreviousMonth, euroExchangeRate);
     });
   });
 }
 
-function displayResults(result) {
+function displayResults(date, result) {
   const resultList = document.getElementById("result-list");
   const row = document.createElement("tr");
 
   row.innerHTML = `
-  <td>${result * 40}</td>
-  <td>${result * 70}</td>
-  <td>${result * 100}</td>
+  <th>${date}</th>
+  <td>${(result * 40).toFixed(2)} zł</td>
+  <td>${(result * 70).toFixed(2)} zł</td>
+  <td>${(result * 100).toFixed(2)} zł</td>
   `;
 
   resultList.appendChild(row);
@@ -49,6 +50,8 @@ async function getData(userDate) {
 
   return data;
 }
+
+// source https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/floor
 
 function decimalAdjust(type, value, exp) {
   type = String(type);
@@ -71,4 +74,4 @@ function decimalAdjust(type, value, exp) {
   return Number(`${newMagnitude}e${+newExponent + exp}`);
 }
 
-getLastDayOfPreviousMonth();
+main();

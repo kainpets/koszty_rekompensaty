@@ -6,6 +6,10 @@ export default function createTable() {
   const tr = document.createElement("tr");
   thead.appendChild(tr);
 
+  const th0 = createTh();
+  th0.textContent = "";
+  tr.appendChild(th0);
+
   const th1 = createTh();
   th1.textContent = "> 5000 zł";
   tr.appendChild(th1);

@@ -8,6 +8,19 @@ import "./components/footerComponent";
 // checks what was the exchange rate of euro for the last day
 // of the previous month.
 
+function displayResults() {
+  const resultList = document.getElementById("result-list");
+  const row = document.createElement("tr");
+
+  row.innerHTML = `
+  <td>getD</td>
+  <td>wtf</td>
+  <td>ffs</td>
+  `;
+
+  resultList.appendChild(row);
+}
+
 function getUserDate() {
   const form = document.getElementById("form");
 
@@ -23,22 +36,11 @@ function getUserDate() {
   });
 }
 
-function displayResults() {
-  const resultList = document.getElementById("result-list");
-  const row = document.createElement("tr");
-
-  row.innerHTML = `
-  <td>hi</td>
-  <td>wtf</td>
-  <td>ffs</td>
-  `;
-
-  resultList.appendChild(row);
-}
 
 async function getData(userDate) {
+
   const response = await fetch(
-    `http://api.nbp.pl/api/exchangerates/rates/c/usd/2016-04-04/?format=json
+    `http://api.nbp.pl/api/exchangerates/rates/c/usd/${userDate}/?format=json
     `
   );
   const data = await response.json();

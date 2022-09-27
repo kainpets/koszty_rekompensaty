@@ -12,3 +12,6 @@ style the date picker
 create section "jak to działa?" i "czy pszysługuje mi rekompensata?"
 change the links in the footer to correctly display socials icons
 display results
+add moment.js library
+use moment.js to check what was the last day of previous month
+return the euro exchange rate from last day of previous month

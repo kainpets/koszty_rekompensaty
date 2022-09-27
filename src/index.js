@@ -43,7 +43,7 @@ function displayResults(date, result) {
 
 async function getData(userDate) {
   const response = await fetch(
-    `http://api.nbp.pl/api/exchangerates/rates/a/eur/${userDate}/?format=json
+    `https://api.nbp.pl/api/exchangerates/rates/a/eur/${userDate}/?format=json
     `
   );
   const data = await response.json();

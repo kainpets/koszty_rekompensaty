@@ -13,14 +13,13 @@ function getUserDate() {
 
   form.addEventListener("change", (event) => {
     event.preventDefault();
-    const date = new Date(document.getElementById("year").value);
-    const month = date.toString().slice(4, 7);
-    const year = date.toString().slice(11, 15);
-    const finalDate = `${year}-${convertMonth(month)}`;
-    getData(finalDate).then((data) => console.log("resolved:", data));
+    const date = document.getElementById("year").value;
+    console.log(date);
+
+    getData(date).then((data) => console.log("resolved:", data));
     displayResults();
 
-    return finalDate;
+    return date;
   });
 }
 

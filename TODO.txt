@@ -9,6 +9,6 @@ create display table
 /* TODO */
 send the month to NBP API and return last month's euro exchange rate
 style the date picker
-create section "jak to działa" i "kiedy mogę tego użyć"
+create section "jak to działa?" i "czy pszysługuje mi rekompensata?"
 change the links in the footer to correctly display socials icons
 display results

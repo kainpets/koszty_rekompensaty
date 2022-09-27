@@ -7,15 +7,15 @@ export default function createTable() {
   thead.appendChild(tr);
 
   const th1 = createTh();
-  th1.textContent = "40 €";
+  th1.textContent = "> 5000 zł";
   tr.appendChild(th1);
 
   const th2 = createTh();
-  th2.textContent = "70 €";
+  th2.textContent = "> 50.000 zł";
   tr.appendChild(th2);
 
   const th3 = createTh();
-  th3.textContent = "100 €";
+  th3.textContent = "< 50.000 zł";
   tr.appendChild(th3);
 
   const tbody = document.createElement("tbody");

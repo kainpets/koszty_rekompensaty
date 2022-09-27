@@ -9,12 +9,30 @@ import moment from "moment/moment";
 // checks what was the exchange rate of euro for the last day
 // of the previous month.
 
-function displayResults() {
+function getLastDayOfPreviousMonth() {
+  const form = document.getElementById("form");
+
+  form.addEventListener("change", (event) => {
+    event.preventDefault();
+    const userDate = document.getElementById("year").value;
+    const lastDayOfPreviousMonth = moment(userDate)
+      .subtract(1, "months")
+      .endOf("month")
+      .format("YYYY-MM-DD");
+    getData(lastDayOfPreviousMonth).then((data) => {
+      const euroExchangeRate = data.rates[0].mid
+      console.log(euroExchangeRate);
+      displayResults(lastDayOfPreviousMonth);
+    });
+  });
+}
+
+function displayResults(result) {
   const resultList = document.getElementById("result-list");
   const row = document.createElement("tr");
 
   row.innerHTML = `
-  <td>get</td>
+  <td>${result}</td>
   <td>wtf</td>
   <td>ffs</td>
   `;
@@ -22,35 +40,9 @@ function displayResults() {
   resultList.appendChild(row);
 }
 
-function getLastDayOfPreviousMonth() {
-  const form = document.getElementById("form");
-
-  form.addEventListener("change", (event) => {
-    event.preventDefault();
-    const userDate = document.getElementById("year").value;
-    const lastDayOfPreviousMonth = moment(userDate).subtract(1, "months").endOf("month").format("YYYY-MM-DD");
-    console.log(lastDayOfPreviousMonth);
-  });
-}
-
-getLastDayOfPreviousMonth();
-
-// function getUserDate() {
-//   const form = document.getElementById("form");
-
-//   form.addEventListener("change", (event) => {
-//     event.preventDefault();
-//     const date = document.getElementById("year").value;
-//     getData(date).then((data) => console.log("resolved:", data));
-//     displayResults();
-
-//     return date;
-//   });
-// }
-
 async function getData(userDate) {
   const response = await fetch(
-    `http://api.nbp.pl/api/exchangerates/rates/c/usd/${userDate}/?format=json
+    `http://api.nbp.pl/api/exchangerates/rates/a/eur/${userDate}/?format=json
     `
   );
   const data = await response.json();
@@ -58,31 +50,25 @@ async function getData(userDate) {
   return data;
 }
 
-function convertMonth(month) {
-  switch (month) {
-    case "Jan":
-      return "01";
-    case "Feb":
-      return "02";
-    case "Mar":
-      return "03";
-    case "Apr":
-      return "04";
-    case "May":
-      return "05";
-    case "Jun":
-      return "06";
-    case "Jul":
-      return "07";
-    case "Aug":
-      return "08";
-    case "Sep":
-      return "09";
-    case "Oct":
-      return "10";
-    case "Nov":
-      return "11";
-    case "Dec":
-      return "12";
+function decimalAdjust(type, value, exp) {
+  type = String(type);
+  if (!["round", "floor", "ceil"].includes(type)) {
+    throw new TypeError(
+      "The type of decimal adjustment must be one of 'round', 'floor', or 'ceil'."
+    );
   }
+  exp = Number(exp);
+  value = Number(value);
+  if (exp % 1 !== 0 || Number.isNaN(value)) {
+    return NaN;
+  } else if (exp === 0) {
+    return Math[type](value);
+  }
+  const [magnitude, exponent = 0] = value.toString().split("e");
+  const adjustedValue = Math[type](`${magnitude}e${exponent - exp}`);
+  // Shift back
+  const [newMagnitude, newExponent = 0] = adjustedValue.toString().split("e");
+  return Number(`${newMagnitude}e${+newExponent + exp}`);
 }
+
+getLastDayOfPreviousMonth();

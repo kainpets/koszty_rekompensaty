@@ -3,6 +3,7 @@ import "./components/headerComponent";
 import "./components/formComponent";
 import "./components/tableComponent";
 import "./components/footerComponent";
+import moment from "moment/moment";
 
 // The date input from the user is sent to the NBP API that
 // checks what was the exchange rate of euro for the last day
@@ -13,7 +14,7 @@ function displayResults() {
   const row = document.createElement("tr");
 
   row.innerHTML = `
-  <td>getD</td>
+  <td>get</td>
   <td>wtf</td>
   <td>ffs</td>
   `;
@@ -21,24 +22,33 @@ function displayResults() {
   resultList.appendChild(row);
 }
 
-function getUserDate() {
+function getLastDayOfPreviousMonth() {
   const form = document.getElementById("form");
 
   form.addEventListener("change", (event) => {
     event.preventDefault();
-    const date = document.getElementById("year").value;
-    console.log(date);
-
-    getData(date).then((data) => console.log("resolved:", data));
-    displayResults();
-
-    return date;
+    const userDate = document.getElementById("year").value;
+    const lastDayOfPreviousMonth = moment(userDate).subtract(1, "months").endOf("month").format("YYYY-MM-DD");
+    console.log(lastDayOfPreviousMonth);
   });
 }
 
+getLastDayOfPreviousMonth();
+
+// function getUserDate() {
+//   const form = document.getElementById("form");
+
+//   form.addEventListener("change", (event) => {
+//     event.preventDefault();
+//     const date = document.getElementById("year").value;
+//     getData(date).then((data) => console.log("resolved:", data));
+//     displayResults();
+
+//     return date;
+//   });
+// }
 
 async function getData(userDate) {
-
   const response = await fetch(
     `http://api.nbp.pl/api/exchangerates/rates/c/usd/${userDate}/?format=json
     `
@@ -76,5 +86,3 @@ function convertMonth(month) {
       return "12";
   }
 }
-
-getUserDate();

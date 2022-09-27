@@ -20,9 +20,9 @@ function getLastDayOfPreviousMonth() {
       .endOf("month")
       .format("YYYY-MM-DD");
     getData(lastDayOfPreviousMonth).then((data) => {
-      const euroExchangeRate = data.rates[0].mid
+      const euroExchangeRate = decimalAdjust("floor", data.rates[0].mid, -2);
       console.log(euroExchangeRate);
-      displayResults(lastDayOfPreviousMonth);
+      displayResults(euroExchangeRate);
     });
   });
 }
@@ -32,9 +32,9 @@ function displayResults(result) {
   const row = document.createElement("tr");
 
   row.innerHTML = `
-  <td>${result}</td>
-  <td>wtf</td>
-  <td>ffs</td>
+  <td>${result * 40}</td>
+  <td>${result * 70}</td>
+  <td>${result * 100}</td>
   `;
 
   resultList.appendChild(row);

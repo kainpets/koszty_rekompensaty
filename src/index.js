@@ -5,10 +5,6 @@ import "./components/tableComponent";
 import "./components/footerComponent";
 import moment from "moment/moment";
 
-// The date input from the user is sent to the NBP API that
-// checks what was the exchange rate of euro for the last day
-// of the previous month.
-
 function main() {
   const form = document.getElementById("form");
 

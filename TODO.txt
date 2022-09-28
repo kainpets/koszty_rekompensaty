@@ -5,13 +5,13 @@ get date from a user //
 solve CORS issue - involve fetching data in button press //
 extract month and year from the user's input //
 create display table
-
-/* TODO */
-send the month to NBP API and return last month's euro exchange rate
-style the date picker
-create section "jak to działa?" i "czy pszysługuje mi rekompensata?"
-change the links in the footer to correctly display socials icons
 display results
 add moment.js library
 use moment.js to check what was the last day of previous month
 return the euro exchange rate from last day of previous month
+send the month to NBP API and return last month's euro exchange rate
+
+/* TODO */
+style the date picker
+create section "jak to działa?" i "czy pszysługuje mi rekompensata?"
+change the links in the footer to correctly display socials icons

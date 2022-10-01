@@ -133,6 +133,7 @@ input, select, textarea {
 
 		a:hover {
 			border-bottom-color: transparent;
+      cursor: pointer;
 		}
 
 	strong, b {
@@ -348,5 +349,12 @@ input, select, textarea {
       max-width: 100%;
       margin-top: 2rem;
       text-align: center;
+      position: fixed;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.9);
+    }
+
+    .icon {
+      height: 24px;
     }
 

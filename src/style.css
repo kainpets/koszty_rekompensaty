@@ -83,6 +83,10 @@ input, select, textarea {
 		background: url("./images/bg.jpg");
 	}
 
+  body > * {
+    padding-top: 1rem;
+  }
+
 /* Type */
 
 	html {
@@ -133,7 +137,6 @@ input, select, textarea {
 
 		a:hover {
 			border-bottom-color: transparent;
-      cursor: pointer;
 		}
 
 	strong, b {
@@ -349,7 +352,7 @@ input, select, textarea {
       max-width: 100%;
       margin-top: 2rem;
       text-align: center;
-      position: fixed;
+      position: absolute;
       bottom: 0;
       background: rgba(0, 0, 0, 0.9);
     }

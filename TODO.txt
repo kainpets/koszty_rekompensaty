@@ -16,3 +16,4 @@ create section "jak to działa?" i "czy pszysługuje mi rekompensata?"
 change the links in the footer to correctly display socials icons
 minify the bundle
 find the last work day
+style the site

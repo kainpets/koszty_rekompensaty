@@ -39,5 +39,6 @@ function createLink(url, text, className) {
   link.href = url;
   link.textContent = text;
   link.classList.add(className);
+  link.target = "_blank";
   return link;
 }

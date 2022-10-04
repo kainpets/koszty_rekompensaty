@@ -4,7 +4,7 @@ import "./components/formComponent";
 import "./components/tableComponent";
 import "./components/footerComponent";
 import moment from "moment/moment";
-import isBusinessDay from "moment-business-days";
+import { isBusinessDay, prevBusinessDay } from "moment-business-days";
 
 function main() {
   const form = document.getElementById("form");
@@ -16,13 +16,23 @@ function main() {
       .subtract(1, "months")
       .endOf("month")
       .format("YYYY-MM-DD");
-    console.log(lastDayOfPreviousMonth);
-    console.log(moment("31-01-2015", "DD-MM-YYYY").isBusinessDay());
-    getData(lastDayOfPreviousMonth).then((data) => {
-      const euroExchangeRate = decimalAdjust("floor", data.rates[0].mid, -2);
-      console.log(euroExchangeRate);
-      displayResults(lastDayOfPreviousMonth, euroExchangeRate);
-    });
+    if (!moment(lastDayOfPreviousMonth).isBusinessDay()) {
+      const previousBusinessDay = moment(lastDayOfPreviousMonth)
+        .prevBusinessDay()
+        .format("YYYY-MM-DD");
+      console.log(previousBusinessDay);
+      getData(previousBusinessDay).then((data) => {
+        const euroExchangeRate = decimalAdjust("floor", data.rates[0].mid, -2);
+        console.log(euroExchangeRate);
+        displayResults(previousBusinessDay, euroExchangeRate);
+      });
+    } else {
+      getData(lastDayOfPreviousMonth).then((data) => {
+        const euroExchangeRate = decimalAdjust("floor", data.rates[0].mid, -2);
+        console.log(euroExchangeRate);
+        displayResults(lastDayOfPreviousMonth, euroExchangeRate);
+      });
+    }
   });
 }
 

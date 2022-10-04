@@ -1,3 +1,5 @@
+import Icon from "../images/github-icon-1-logo-svgrepo-com.svg";
+
 export default function footer() {
   const footer = document.createElement("footer");
   footer.classList.add("footer");
@@ -14,38 +16,17 @@ export default function footer() {
   unorderdList.classList.add("social-list");
   footer.appendChild(unorderdList);
 
-  const socialListTwitter = document.createElement("li");
-  socialListTwitter.classList.add("social-list__item");
-  unorderdList.appendChild(socialListTwitter);
-
-  socialListTwitter.appendChild(
-    createLink(
-      "https://twitter.com/kainpets",
-      "placeholder",
-      "social-list__link"
-    )
-  );
-
-  const twitterIcon = document.createElement("i");
-  twitterIcon.classList.add("fab");
-  twitterIcon.classList.add("fa-twitter");
-  socialListTwitter.appendChild(twitterIcon);
-
   const socialListGithub = document.createElement("li");
   socialListGithub.classList.add("social-list__item");
   unorderdList.appendChild(socialListGithub);
 
   socialListGithub.appendChild(
-    createLink(
-      "https://github.com/kainpets",
-      "placeholder",
-      "social-list__link"
-    )
+    createLink("https://github.com/kainpets", "GitHub", "social-list__link")
   );
 
-  const gitHubIcon = document.createElement("i");
-  gitHubIcon.classList.add("fab");
-  gitHubIcon.classList.add("fa-github");
+  const gitHubIcon = new Image();
+  gitHubIcon.src = Icon;
+  gitHubIcon.classList.add("icon");
   socialListGithub.appendChild(gitHubIcon);
 
   return footer;
@@ -58,5 +39,6 @@ function createLink(url, text, className) {
   link.href = url;
   link.textContent = text;
   link.classList.add(className);
+  link.target = "_blank";
   return link;
 }

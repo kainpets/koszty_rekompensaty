@@ -1,5 +1,7 @@
 export default function createTable() {
   const table = document.createElement("table");
+  table.classList.add("table-wrapper");
+  table.classList.add("main");
   const thead = document.createElement("thead");
   table.appendChild(thead);
 

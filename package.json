@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "gh-pages": "^4.0.0",
-    "moment": "^2.29.4"
+    "moment": "^2.29.4",
+    "moment-business-days": "^1.2.0"
   }
 }

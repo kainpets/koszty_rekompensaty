@@ -10,10 +10,10 @@ add moment.js library
 use moment.js to check what was the last day of previous month
 return the euro exchange rate from last day of previous month
 send the month to NBP API and return last month's euro exchange rate
+change the links in the footer to correctly display socials icons
+find the last work day
+style the site
 
 /* TODO */
 create section "jak to działa?" i "czy pszysługuje mi rekompensata?"
-change the links in the footer to correctly display socials icons
 minify the bundle
-find the last work day
-style the site

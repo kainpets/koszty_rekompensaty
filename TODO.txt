@@ -16,4 +16,4 @@ style the site
 
 /* TODO */
 create section "jak to działa?" i "czy pszysługuje mi rekompensata?"
-minify the bundle
+fix webpack errors

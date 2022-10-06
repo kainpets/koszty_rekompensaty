@@ -12,7 +12,7 @@ export default function form() {
   userDateInput.id = "year";
   userDateInput.setAttribute("type", "date");
   userDateInput.setAttribute("name", "date");
-  userDateInput.setAttribute("required", "");
+  userDateInput.setAttribute("min", "2002-02-01");
   form.appendChild(userDateInput);
 
   return form;

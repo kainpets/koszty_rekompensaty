@@ -9,7 +9,7 @@ export default function createTable() {
   thead.appendChild(tr);
 
   const th0 = createTh();
-  th0.textContent = "wysokość roszczenia";
+  th0.textContent = "Ostatni dzień poprzedniego miesiąca";
   tr.appendChild(th0);
 
   const th1 = createTh();

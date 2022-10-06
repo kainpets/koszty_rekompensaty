@@ -343,6 +343,17 @@ input, select, textarea {
 			border-top: solid 2px #ffffff;
 		}
 
+		.result-table-row {
+			border-top: 0;
+		}
+
+		.result-table-header {
+			width: 220px;
+			text-align: center;
+		}
+
+
+
     /* Footer */
   
     footer {

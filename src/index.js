@@ -39,9 +39,10 @@ function main() {
 function displayResults(date, result) {
   const resultList = document.getElementById("result-list");
   const row = document.createElement("tr");
+  row.classList.add("result-table-row");
 
   row.innerHTML = `
-  <th>${date}</th>
+  <th class="result-table-header">${date}</th>
   <td>${(result * 40).toFixed(2)} zł</td>
   <td>${(result * 70).toFixed(2)} zł</td>
   <td>${(result * 100).toFixed(2)} zł</td>

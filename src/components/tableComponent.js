@@ -21,7 +21,7 @@ export default function createTable() {
   tr.appendChild(th2);
 
   const th3 = createTh();
-  th3.textContent = "> 50.000 zł";
+  th3.textContent = "≥ 50.000 zł";
   tr.appendChild(th3);
 
   const tbody = document.createElement("tbody");

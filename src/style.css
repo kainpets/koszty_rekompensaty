@@ -106,7 +106,9 @@ input, select, textarea {
 			html {
 				font-size: 11pt;
 			}
-
+			h2 {
+				padding-left: 1rem;
+			}
 		}
 
 		@media screen and (max-width: 360px) {

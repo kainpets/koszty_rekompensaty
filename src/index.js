@@ -1,9 +1,10 @@
 import "./style.css";
-import "./components/headerComponent";
+import "./components/infoComponent";
 import "./components/formComponent";
 import "./components/tableComponent";
 import "./components/footerComponent";
 import moment from "moment/moment";
+// do not remove the below import! for some reason app doesn't work without it
 import { isBusinessDay, prevBusinessDay } from "moment-business-days";
 
 function main() {

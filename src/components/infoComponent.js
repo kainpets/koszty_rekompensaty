@@ -9,7 +9,7 @@ export default function infoComponent() {
   title.textContent = "Kalkulator kosztów rekompensaty";
 
   paragraph.innerText =
-    "Kalkualtor pozwala w prosty sposób obliczyć kwotę, jakiej może domagać się przedsiębiorca od swojego kontrahenta za opóźnienie w płatności. Aby użyć kalkulatora po prostu wprowadź datę płatności faktury (a najlepiej datę jej wymagalności - pierwszego dnia po dniu płatności) w okno powyżej. Możesz do tego użyć klawiatury lub kliknąć w kalendarz, który pozwoli ci wybrać odpowiednią datę. Jeśli chcesz dokładnie zrozumieć, z czego wynika należność, wejdź w link poniżej.";
+    "Kalkulator pozwala w prosty sposób obliczyć kwotę, jakiej może domagać się przedsiębiorca od swojego kontrahenta za opóźnienie w płatności. Aby użyć kalkulatora po prostu wprowadź datę płatności faktury (a najlepiej datę jej wymagalności - pierwszego dnia po dniu płatności) w okno powyżej. Możesz do tego użyć klawiatury lub kliknąć w kalendarz, który pozwoli ci wybrać odpowiednią datę. Jeśli chcesz dokładnie zrozumieć, z czego wynika należność, wejdź w link poniżej.";
 
   link.innerText =
     "https://www.inlegis.pl/baza-wiedzy/wierzytelnosci/rekompensata-kosztow-odzyskiwana-naleznosci/";
